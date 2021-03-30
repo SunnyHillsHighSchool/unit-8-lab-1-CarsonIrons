@@ -367,7 +367,28 @@ public class Picture
   }
 
    ////////////////////// methods ///////////////////////////////////////
-
+//vertical mirror method 
+public void vertMirror(){
+//Create a 2D array of pixels
+Pixel[][] pixels = this.getPixels2D();
+//loop through columns of the array
+for(int i=0; i<pixels.length;i++){
+//nest loop through rows of the array half way through
+for(int j=0; j<pixels[i].length/2;j++){
+//Create a top pixel variable which is current column and current row
+Pixel top = pixels[j][i];
+//Create a bottom pixel variable which is current column and 
+//length-1-current row
+Pixel bottom = pixels[pixels.length-1-j][i];
+//switch top and bottom
+pixels[j][i].setColor(bottom.getColor());
+pixels[pixels.length-1-j][i].setColor(top.getColor());
+//end nested for loop
+}
+//end loop
+}
+ //end method
+}
    
 
 
