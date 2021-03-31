@@ -371,10 +371,10 @@ public class Picture
 public void vertMirror(){
 //Create a 2D array of pixels
 Pixel[][] pixels = this.getPixels2D();
-//loop through columns of the array
-for(int i=0; i<pixels.length;i++){
-//nest loop through rows of the array half way through
-for(int j=0; j<pixels[i].length/2;j++){
+//loop through half of rows
+for(int j=0; j<pixels.length/2;j++){
+//loop through columns 
+for(int i=0; i<pixels[0].length;i++){
 //Create a top pixel variable which is current column and current row
 Pixel top = pixels[j][i];
 //Create a bottom pixel variable which is current column and 
